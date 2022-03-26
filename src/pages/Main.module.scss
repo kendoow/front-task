@@ -1,0 +1,9 @@
+
+.newsContainer{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-column-gap: 30px;
+    grid-row-gap: 30px;
+    padding: 0 calc(50% - 700px);
+    padding-top: 30px;
+}
