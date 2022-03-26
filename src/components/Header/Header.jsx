@@ -1,5 +1,4 @@
 import { Link } from "react-router-dom";
-import News from "../../pages/News";
 import styles from "./Header.module.scss";
 
 const Header = () => {

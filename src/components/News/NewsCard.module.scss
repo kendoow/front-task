@@ -1,5 +1,6 @@
+@import '../../index.scss';
 .news{
-    background-color: #bdc29b;
+    background-color: $card;
     max-width: 550px;
     height: 450px;
     border-radius: 20px;
@@ -9,13 +10,14 @@
     transition: all 0.2s;
     text-decoration: none;
     color: #000;
+    margin: 0px 20px;
     &:hover{
         transform: scale(1.01);
         box-shadow: 5px 5px 22px -5px rgba(0, 0, 0, 0.6);
     }
     &Title{
         text-align: center;
-        padding-top: 60px;
+        padding: 60px 20px 0px;
         font-size: 30px;
         
     }

@@ -1,0 +1,25 @@
+.newsContainer {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-column-gap: 30px;
+  grid-row-gap: 30px;
+  padding: 0 calc(50% - 700px);
+  padding-top: 30px;
+  margin-right: 1%;
+  margin-left: 1%;
+}
+@media (max-width: 1199px) {
+  .newsContainer {
+    margin-top: 30px;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 0 calc(50% - 500px);
+  }
+}
+@media (max-width: 760px) {
+  .newsContainer {
+    margin-top: 30px;
+    grid-template-columns: repeat(1, 1fr);
+    padding: 0 calc(50% - 250px);
+    grid-row-gap: 20px;
+  }
+}

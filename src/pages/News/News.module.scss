@@ -1,0 +1,13 @@
+@import '../../index.scss';
+.news{
+    padding: 0 calc(50% - 700px);
+    &Title{
+        text-align: center;
+        padding-top: 20px;
+    }
+    &Text{
+        padding-top: 30px;
+        font-size: 18px;
+        letter-spacing: 1px;
+    }
+}

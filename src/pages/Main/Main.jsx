@@ -1,5 +1,5 @@
-import Header from "../components/Header/Header";
-import News1 from "../components/News/NewsCard";
+import Header from "../../components/Header/Header";
+import News1 from "../../components/News/NewsCard";
 import styles from "./Main.module.scss";
 const Main = () => {
   return (
@@ -16,7 +16,7 @@ const Main = () => {
           />
           <News1
             type={"Подкаст "}
-            title="Японский депутат разоблачил манипуляцию Зеленского"
+            title="Минобороны предупредило о звонках россиянам с фейковыми вызовами в военкомат"
           />
           <News1
             type={"Новость"}
