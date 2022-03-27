@@ -1,4 +1,4 @@
-@import '../../index.scss';
+@import "../../index.scss";
 .login {
   background: #e5e5e5;
   width: 100%;
@@ -11,6 +11,7 @@
     background-color: #fff;
     width: 400px;
     border-radius: 10px;
+    margin: 20px;
   }
   &Title {
     display: flex;
@@ -18,46 +19,97 @@
     align-items: center;
     padding: 50px 50px 40px 20px;
   }
-  form{
-      display: flex;
-      align-items: center;
-      flex-direction: column;
+  form {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
   }
-  input{
+  input {
     outline: none;
     font-size: 24px;
     border: none;
     background: #ffffff;
     box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.1);
     border-radius: 10px;
-    
+
     padding: 15px 30px;
     margin-bottom: 30px;
-    &::placeholder{
-        font-size: 20px;
+    &::placeholder {
+      font-size: 20px;
     }
   }
   &Email {
-      
   }
   &Password {
-   
   }
 }
 button {
-    background: $button;
-    border-radius: 10px;
-    font-size: 24px;
-    padding: 20px 60px;
-    cursor: pointer;
-    border: none; 
-    outline: none;
-    color: #fff;
-    margin-bottom: 30px;
+  background: $button;
+  border-radius: 10px;
+  font-size: 24px;
+  padding: 20px 60px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+  color: #fff;
+  margin-bottom: 30px;
+  transition: all 0.2s;
+  box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
+  &:hover {
     transition: all 0.2s;
-    box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
-    &:hover{
-        transition: all 0.2s;
-        transform: scale(1.05);
+    transform: scale(1.05);
+  }
+  &:disabled {
+    transition: all 0.2s;
+    background-color: rgb(173, 173, 173);
+    &:hover {
+      transition: all 0.2s;
+      background-color: rgb(114, 114, 114);
+      transform: scale(1);
     }
+  }
+}
+.error {
+  color: red;
+  margin-bottom: 5px;
+  text-align: center;
+}
+.passwordCheckbox{
+  
+  cursor: pointer;
+  width: 15px;
+  height: 15px;
+  display: flex;
+  justify-content: center;
+  font-size: 15px;
+  align-items: center;
+  &Wrapper{
+    display: flex;
+  }
+}
+input[type = "checkbox"]{
+  border: none;
+  margin-right: 10px;
+  width: 20px;
+  height: 20px;
+  background-color: rgb(255, 255, 255);
+  transition: all 0.2s;
+  box-shadow: 0px 5px 10px 2px rgba(34, 60, 80, 0.2) inset;
+  padding: 0;
+  border-radius: 3px;
+}
+@media (max-width: 450px) {
+  .login {
+    &Form {
+      max-width: 300px;
+    }
+    input {
+      font-size: 18px;
+      padding: 15px;
+      margin-bottom: 30px;
+      &::placeholder {
+        font-size: 20px;
+      }
+    }
+  }
 }
