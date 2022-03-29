@@ -46,8 +46,8 @@
     "users": [
       {
         "id": 1,
-        "login": "admin",
-        "password": "pa$$word"
+        "login": "123",
+        "password": "11111"
       },
       {
         "id": 2,
