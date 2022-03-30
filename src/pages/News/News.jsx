@@ -9,7 +9,6 @@ const News = ({title,content}) => {
   useEffect(() => {
     dispatch(ArticlesActionCreators.fetchArticle(id));
   }, [dispatch,id]);
-  console.log(id)
   
   return (
     <div className={styles.news}>

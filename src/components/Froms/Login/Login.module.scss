@@ -1,4 +1,4 @@
-@import "../../index.scss";
+@import "../../../index.scss";
 .login {
   background: #e5e5e5;
   width: 100%;
@@ -38,12 +38,8 @@
       font-size: 20px;
     }
   }
-  &Email {
-  }
-  &Password {
-  }
 }
-button {
+.button {
   background: $button;
   border-radius: 10px;
   font-size: 24px;

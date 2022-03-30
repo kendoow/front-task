@@ -1,9 +1,9 @@
 import styles from "./Login.module.scss";
-import useInput from "../../hooks/UseInput";
+import useInput from "../../../hooks/UseInput";
 import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
-import { AuthActionCreators } from "../../redux/reducers/auth/actionCreators";
-import Spiner from "../Spiner/Spiner";
+import { AuthActionCreators } from "../../../redux/reducers/auth/actionCreators";
+import Spiner from "../../Spiner/Spiner";
 const Loing = () => {
   const dispatch = useDispatch();
 
@@ -52,7 +52,7 @@ const Loing = () => {
              <Spiner/> 
              :
               
-                  <button onClick={submit} disabled = {!loginValid.inputVaild || !passwordValid.inputVaild} type="submit">Войти</button>
+                  <button className={styles.button} onClick={submit} disabled = {!loginValid.inputVaild || !passwordValid.inputVaild} type="submit">Войти</button>
               
            }
           

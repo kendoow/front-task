@@ -9,7 +9,7 @@ const Main = () => {
   const dispatch = useDispatch()
   
   const {items} = useSelector((state) => state.articles)
-  
+  const { isAuth } = useSelector((state) => state.auth);
   useEffect(() => {
     dispatch(ArticlesActionCreators.fetchArticles());
   }, [dispatch]);
@@ -19,11 +19,11 @@ const Main = () => {
       date = moment(date).format('MMMM D, YYYY');
       return date.toUpperCase();
     };
-    console.log(items)
+
   return (
     
-    <> 
-       <Header to={'/login'} title = 'Новая запись'/> 
+    <> { isAuth ?  <Header to={'/admin/createPost'} title = 'Создать запись'/> : <Header to={'/login'} title = 'Новая запись'/> }
+       
         <div className={styles.newsContainer}>
           {items.map((obj) => (
             <NewsCard

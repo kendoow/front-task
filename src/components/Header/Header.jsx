@@ -8,11 +8,7 @@ const Header = ({to,title}) => {
         <input type="text" placeholder="Поиск" /> 
         <Link className={styles.headerLink} to={to}>{title}</Link> 
       </div> 
-      <div className="headeruser">
-        <div className="userIcon">
-          123
-        </div>
-      </div>
+      
     </header>
   );
 };
