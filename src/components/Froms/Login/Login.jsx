@@ -10,7 +10,7 @@ const Loing = () => {
   const [showPassword, setShowPassword] = useState(false); // скрыть показать пароль
   const loginValid = useInput("", {isEmpty:true, minLength: 3}); // валидатор логина 
   const passwordValid = useInput("",{isEmpty:true, minLength:5}); // валидатор пароля 
-  const {error, isLoading} = useSelector(state => state.auth)
+  const {error, isLoading} = useSelector(state => state.auth) 
   const submit = () => {
     dispatch(AuthActionCreators.login(loginValid.value,passwordValid.value))
      // чтобы попасть в аккаунт достаю из валидатора value, т.к через useState 2й раз value из input не вытащить

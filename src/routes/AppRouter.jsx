@@ -1,6 +1,6 @@
 import {  useSelector } from "react-redux";
 import { Navigate, Route, Routes } from "react-router-dom";
-import CreatePost from "../components/Froms/CreatePost/CreatePost";
+import AddPostForm from "../components/Froms/AddPostForm/AddPostForm";
 import Login from "../components/Froms/Login/Login";
 import Main from "../pages/Main/Main";
 import News from "../pages/News/News";
@@ -15,7 +15,7 @@ const AppRouter = () => {
     <Routes>
       <Route path="*" element={<Navigate to="/admin" />} />
       <Route path="/admin" element={<Main />} />
-      <Route path="/admin/createPost" element={<CreatePost />} />
+      <Route path="/admin/createPost" element={<AddPostForm />} />
       <Route path="admin/news/:id" element={<News />} />
       <Route path="/news/:id" element={
             <News

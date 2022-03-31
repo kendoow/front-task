@@ -1,4 +1,4 @@
-.CreatePost{
+.AddPostForm{
     display: flex;
     justify-content: center;
     flex-direction: column;
@@ -6,8 +6,8 @@
     font-size: 30px;
     padding: 0 calc(50% - 500px);
     &Text{
-        margin-bottom: 30px;
-        margin-top: 30px;
+        margin-bottom: 20px;
+        margin-top: 20px;
     }
     &Container{
         display: flex;
@@ -27,7 +27,12 @@
     &Description input[type="text"]{
         height: 300px;
     }
-
+    .error{
+      color: red;
+      margin-bottom: 5px;
+      text-align: center;
+      font-size: 14px;
+    }
     &Button{
         background: #8fb38e;
         border-radius: 10px;
@@ -37,7 +42,7 @@
         border: none;
         outline: none;
         color: #fff;
-        margin-bottom: 30px;
+        margin-bottom: 20px;
         transition: all 0.2s;
         box-shadow: 5px 5px 10px rgba(0, 0, 0, 0.2);
         &:hover {
@@ -70,20 +75,20 @@ input[type="text"]{
     border-radius: 10px;
 
     padding: 15px 30px;
-    margin-bottom: 30px;
+    margin-bottom: 20px;
     &::placeholder {
       font-size: 20px;
     }
 }
 @media (max-width: 1199px) {
-    .CreatePostContainer {
+    .AddPostFormContainer {
       padding: 0 calc(50% - 400px);
       
     }
     
   }
   @media (max-width: 760px) {
-    .CreatePostContainer {
+    .AddPostFormContainer {
       padding: 0 calc(50% - 250px);
     }
     textarea{

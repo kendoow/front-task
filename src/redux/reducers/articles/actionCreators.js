@@ -9,6 +9,17 @@ export const ArticlesActionCreators = {
     type: "SET_ARTICLES",
     payload: items,
   }),
+  addArticle : (artilce) => async (dispatch) =>{
+    try {
+      await axios.post('http://localhost:8000/articles',artilce)
+      .then(({ artilce }) => {
+        dispatch(ArticlesActionCreators.fetchArticles(artilce));
+        // console.log(data) // передаю статью в стор после создания
+      }) 
+    } catch(error) {
+      console.log(error)
+    }
+  },
   fetchArticles: () => async (dispatch) => {
     
     try {
@@ -19,7 +30,7 @@ export const ArticlesActionCreators = {
         }) 
       
     } catch (error) {
-        
+        console.log(error)
     }
     
   },
