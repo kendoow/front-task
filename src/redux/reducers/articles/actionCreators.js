@@ -20,6 +20,21 @@ export const ArticlesActionCreators = {
       console.log(error)
     }
   },
+  setSelectedPost: (item) => ({
+    type: "SET_SELECTED_POST",
+    payload: item,
+  }),
+  editArticle : (updatedPost) => async (dispatch) =>{
+    try {
+      await axios.put(`http://localhost:8000/articles/${updatedPost.id}`, updatedPost)
+      .then(({ artilce }) => {
+        dispatch(ArticlesActionCreators.fetchArticles(artilce));
+
+      }) 
+    } catch(error) {
+      console.log(error)
+    }
+  },
   fetchArticles: () => async (dispatch) => {
     
     try {

@@ -1,5 +1,7 @@
 import { Link } from "react-router-dom";
 import styles from "./NewsCard.module.scss";
+import editIcon from '../../assets/editIcon.svg'
+import { useSelector } from "react-redux";
 const NewsCard = ({
   title,
   tags,
@@ -8,13 +10,24 @@ const NewsCard = ({
   author,
   source,
   publishedAt,
-  id
+  id,
+  hadleSelectPost
 }) => {
+
+  const { isAuth } = useSelector((state) => state.auth);
+
   return (
     <Link to={`/news/${id}`} className={styles.news}>
       <div className={styles.newsHeader}>
+        {isAuth ? <Link to = '/admin/editPost'> <button onClick={hadleSelectPost}> <img className={styles.editIcon} src={editIcon} alt="editIcon" /></button> </Link> : ""}
+        
+
+        <div className={styles.newsHeaderText}>
         <p className={styles.autor}>Autor: {author}</p>
         <p className={styles.source}>Source: {source}</p>
+        
+        </div>
+        
       </div>
       <div className={styles.newsText}>
         <h2 className={styles.newsTitle}>{title}</h2>

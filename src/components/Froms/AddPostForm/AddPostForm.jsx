@@ -1,4 +1,3 @@
-import React, {  useState } from "react";
 import styles from "./AddPostForm.module.scss";
 import closeIcon from "../../../assets/closeIcon.svg";
 import { Link } from "react-router-dom";
@@ -8,13 +7,6 @@ import moment from "moment";
 import useInput from "../../../hooks/UseInput";
 const AddPostForm = () => {
   const dispatch = useDispatch();
-  // const [autor, setAutor] = useState([''])
-  // const [source, setSource] = useState([''])
-  // const [title, setTitle] = useState(['']) 
-  // const [imageLink, setImageLink] = useState([''])
-  // const [tags, setTags] = useState([''])
-  // const [description, setDescription] = useState([''])
-  // const [content, setContent] = useState([''])
   const autorValid = useInput("", {isEmpty:true, minLength: 5}); // валидатор логина 
   const sourceValid = useInput("",{isEmpty:true, minLength:5});
    // валидатор пароля 
@@ -46,6 +38,7 @@ const AddPostForm = () => {
     dispatch(ArticlesActionCreators.addArticle(post))
   }
 
+  const isValid =  (!autorValid.value || !sourceValid.value || !titleValid.value || !imageLinkValid.value || !tagsValid.value || !descriptionValid.value || !contentValid.value)
   
   return (
     <form>
@@ -57,7 +50,7 @@ const AddPostForm = () => {
             </Link>
         </div>
         {(autorValid.isDirty && autorValid.isEmpty) && <div className={styles.error}>Поле не может быть пустым</div>}
-          {(autorValid.isDirty && autorValid.minLengthError) && <div className={styles.error}>Минимальная длина поля - 5</div>}
+          {(autorValid.isDirty && autorValid.minLengthError) && <div className={styles.error}>Рекомендуемая длина поля - 5 или больше</div>}
         <input
           type="text"
           placeholder="Автор"
@@ -67,7 +60,7 @@ const AddPostForm = () => {
           value = {autorValid.value}
         />
         {(sourceValid.isDirty && sourceValid.isEmpty) && <div className={styles.error}>Поле не может быть пустым</div>}
-          {(sourceValid.isDirty && sourceValid.minLengthError) && <div className={styles.error}>Минимальная длина поля - 5</div>}
+          {(sourceValid.isDirty && sourceValid.minLengthError) && <div className={styles.error}>Рекомендуемая длина поля - 5 или больше</div>}
         <input
           type="text"
           placeholder="Источник"
@@ -77,7 +70,7 @@ const AddPostForm = () => {
           value = {sourceValid.value}
         />
         {(titleValid.isDirty && titleValid.isEmpty) && <div className={styles.error}>Поле не может быть пустым</div>}
-          {(titleValid.isDirty && titleValid.minLengthError) && <div className={styles.error}>Минимальная длина поля - 5</div>}
+          {(titleValid.isDirty && titleValid.minLengthError) && <div className={styles.error}>Рекомендуемая длина поля - 5 или больше</div>}
         <input
           type="text"
           placeholder="Заголовок"
@@ -87,7 +80,7 @@ const AddPostForm = () => {
           value = {titleValid.value}
         />
         {(descriptionValid.isDirty && descriptionValid.isEmpty) && <div className={styles.error}>Поле не может быть пустым</div>}
-          {(descriptionValid.isDirty && descriptionValid.minLengthError) && <div className={styles.error}>Минимальная длина поля - 5</div>}
+          {(descriptionValid.isDirty && descriptionValid.minLengthError) && <div className={styles.error}>Рекомендуемая длина поля - 5 или больше</div>}
         <input
           type="text"
           placeholder="Описание"
@@ -97,7 +90,7 @@ const AddPostForm = () => {
           value = {descriptionValid.value}
         />
         {(imageLinkValid.isDirty && imageLinkValid.isEmpty) && <div className={styles.error}>Поле не может быть пустым</div>}
-          {(imageLinkValid.isDirty && imageLinkValid.minLengthError) && <div className={styles.error}>Минимальная длина поля - 5</div>}
+          {(imageLinkValid.isDirty && imageLinkValid.minLengthError) && <div className={styles.error}>Рекомендуемая длина поля - 5 или больше</div>}
         <input
           type="text"
           placeholder="Ссылка на икноку поста"
@@ -107,7 +100,7 @@ const AddPostForm = () => {
           value = {imageLinkValid.value}
         />
         {(tagsValid.isDirty && tagsValid.isEmpty) && <div className={styles.error}>Поле не может быть пустым</div>}
-          {(tagsValid.isDirty && tagsValid.minLengthError) && <div className={styles.error}>Минимальная длина поля - 5</div>}
+          {(tagsValid.isDirty && tagsValid.minLengthError) && <div className={styles.error}>Рекомендуемая длина поля - 5 или больше</div>}
         <input
           type="text"
           placeholder="Теги"
@@ -117,7 +110,7 @@ const AddPostForm = () => {
           value = {tagsValid.value}
         />
         {(contentValid.isDirty && contentValid.isEmpty) && <div className={styles.error}>Поле не может быть пустым</div>}
-          {(contentValid.isDirty && contentValid.minLengthError) && <div className={styles.error}>Минимальная длина поля - 5</div>}
+          {(contentValid.isDirty && contentValid.minLengthError) && <div className={styles.error}>Рекомендуемая длина поля - 5 или больше</div>}
         <textarea
           type="text"
           placeholder="Контент"
@@ -127,7 +120,7 @@ const AddPostForm = () => {
           value = {contentValid.value}
         />
         <Link to='/admin'>
-        <button onClick={() => CreatePost()} className={styles.AddPostFormButton}>Создать пост</button>
+        <button disabled = {isValid} onClick={() => CreatePost()} className={styles.AddPostFormButton}>Создать пост</button>
         </Link>
       </div>
       

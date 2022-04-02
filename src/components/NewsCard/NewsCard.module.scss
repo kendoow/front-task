@@ -28,11 +28,24 @@
         align-items: center;
         flex-direction: column;
     }
+    .editIcon{
+        margin-bottom: 0;
+        width: 40px;
+        height: 40px;
+    }
+    button {
+        cursor: pointer;
+        border: none;
+        border-radius: 5px;
+        
+    }
+    .Icon{
+        margin-left: 10px;
+    }
     img{
         width: 100%;
         max-width: 200px;
         max-height: 200px;
-        margin-left: 10px;
         margin-bottom: 20px;
         border-radius: 5px;
     }
@@ -42,10 +55,16 @@
     }
     &Header{
         margin-left: 10px;
+        margin-right: 10px;
         margin-top: 10px;
-        display: flex;
-        flex-direction: column;
         text-align: center;
+        display: flex;
+        justify-content: space-between;
+        &Text{
+            display: flex;
+            flex-direction: column;
+            margin-right: 10px;
+        }
         .autor{
             font-weight: bold;
         }

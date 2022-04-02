@@ -1,6 +1,7 @@
 const initialState = {
     items:[],
-    item:[]
+    item:[],
+    selectedPost: {}
   };
   
   export default function articlesReducer(state = initialState, action) {
@@ -15,6 +16,12 @@ const initialState = {
         return {
           ...state,
           item: action.payload,
+          isLoaded: true,
+        };
+        case "SET_SELECTED_POST":
+        return {
+          ...state,
+          selectedPost: action.payload,
           isLoaded: true,
         };
       default:

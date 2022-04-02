@@ -1,6 +1,7 @@
 import {  useSelector } from "react-redux";
 import { Navigate, Route, Routes } from "react-router-dom";
 import AddPostForm from "../components/Froms/AddPostForm/AddPostForm";
+import EditPostForm from "../components/Froms/EditPostForm/EditPostForm";
 import Login from "../components/Froms/Login/Login";
 import Main from "../pages/Main/Main";
 import News from "../pages/News/News";
@@ -17,6 +18,7 @@ const AppRouter = () => {
       <Route path="/admin" element={<Main />} />
       <Route path="/admin/createPost" element={<AddPostForm />} />
       <Route path="admin/news/:id" element={<News />} />
+      <Route path = "/admin/editPost" element = {<EditPostForm/>}/>
       <Route path="/news/:id" element={
             <News
             id = {item.id}
