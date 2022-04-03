@@ -1,0 +1,29 @@
+
+li{
+ list-style: none;
+}
+.Pagination{
+
+    display: flex;
+    margin-top: 50px;
+    margin-bottom: 50px;
+    &Item{
+        
+        button {
+            font-size: 24px;
+            width: 30px;
+            height: 30px;
+            margin-left: 15px;
+            border: none;
+            cursor: pointer;
+            background-color: #8fb38e;
+            border-radius: 5px;
+            transition: 0.2s all;
+            &:hover{
+                transition: 0.2s all;
+                transform: scale(1.01);
+                box-shadow: 5px 5px 22px -5px rgba(0, 0, 0, 0.6);
+            }
+        }
+    }
+}
